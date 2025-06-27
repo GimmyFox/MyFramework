@@ -1,14 +1,15 @@
 import SwiftUI
 
-struct ContentView: View {
-  var body: some View {
+public struct GreetingView: View {
+  public let name: String
+  public var body: some View {
     VStack {
-      Text("Hello world!")
+      Text("Hello, \(name)!")
         .foregroundStyle(.green)
     }
   }
 }
 
 #Preview {
-  ContentView()
+  GreetingView(name: "Maks")
 }
