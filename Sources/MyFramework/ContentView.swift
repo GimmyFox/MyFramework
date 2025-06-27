@@ -2,6 +2,7 @@ import SwiftUI
 
 public struct GreetingView: View {
   public let name: String
+  public let surname: String
   public var body: some View {
     VStack {
       Text("Hello, \(name)!")
@@ -11,5 +12,5 @@ public struct GreetingView: View {
 }
 
 #Preview {
-  GreetingView(name: "Maks")
+  GreetingView(name: "Maks", surname: "...")
 }
