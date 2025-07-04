@@ -7,17 +7,22 @@ let package = Package(
   name: "MyFramework",
   platforms: [
     .iOS(.v15), // или v13+, если без макросов и новых API
-    .macOS(.v11)
   ],
   products: [
     .library(
       name: "MyFramework",
       targets: ["MyFramework"]),
   ],
+  dependencies: [
+    .package(url: "https://github.com/kean/Nuke.git", from: "12.0.0")
+  ],
   targets: [
     .target(
       name: "MyFramework",
-      dependencies: []),
+      dependencies: [
+        .product(name: "Nuke", package: "Nuke"),
+        .product(name: "NukeUI", package: "Nuke")
+      ]),
     .testTarget(
       name: "MyFrameworkTests",
       dependencies: ["MyFramework"]),
